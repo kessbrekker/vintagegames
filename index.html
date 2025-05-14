@@ -7,7 +7,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
+    <nav class="navbar">
+        <div class="logo">VintageGames</div>
+        <input type="text" class="search" placeholder="Ara...">
+        <div class="profile">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profil" class="avatar">
+        </div>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#">Keşfet</a></li>
+                <li><a href="#">Bildirimler</a></li>
+                <li><a href="#">Mesajlar</a></li>
+                <li><a href="#">Profil</a></li>
+            </ul>
+            <button class="tweet-btn">Gönder</button>
+        </aside>
+        <main class="feed">
+            <div class="tweet-box">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar" alt="Profil">
+                <textarea placeholder="Neler oluyor?" rows="2"></textarea>
+                <button class="tweet-btn">Paylaş</button>
+            </div>
+            <div class="tweet">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar" alt="Profil">
+                <div class="tweet-content">
+                    <div class="tweet-header">
+                        <span class="username">Ayşe Yılmaz</span>
+                        <span class="handle">@ayseyilmaz</span>
+                        <span class="time">· 2d</span>
+                    </div>
+                    <div class="tweet-text">
+                        Eski oyunlar gibisi yok! <span class="hashtag">#retro</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tweet">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="avatar" alt="Profil">
+                <div class="tweet-content">
+                    <div class="tweet-header">
+                        <span class="username">Mehmet Can</span>
+                        <span class="handle">@mehmetcan</span>
+                        <span class="time">· 1g</span>
+                    </div>
+                    <div class="tweet-text">
+                        Atari salonları geri gelsin! <span class="hashtag">#nostalji</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ...daha fazla tweet... -->
+        </main>
+        <aside class="widgets">
+            <div class="user-card">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar" alt="Profil">
+                <div>
+                    <div class="username">Kullanıcı Adı</div>
+                    <div class="handle">@kullanici</div>
+                </div>
+            </div>
+            <div class="trends">
+                <h3>Gündemdekiler</h3>
+                <ul>
+                    <li>#retro</li>
+                    <li>#nostalji</li>
+                    <li>#vintagegames</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
 </body>
 </html>
