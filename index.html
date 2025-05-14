@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VintageGames</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">VintageGames</div>
         <input type="text" class="search" placeholder="Ara...">
-        <div class="profile">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profil" class="avatar">
+        <div class="profile" id="profile-section">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profil" class="avatar" id="profile-avatar">
+            <button id="login-btn">Giriş / Kayıt Ol</button>
+            <button id="logout-btn" style="display:none;">Çıkış Yap</button>
         </div>
     </nav>
     <div class="container">
@@ -22,14 +25,15 @@
                 <li><a href="#">Bildirimler</a></li>
                 <li><a href="#">Mesajlar</a></li>
                 <li><a href="#">Profil</a></li>
+                <li id="admin-panel-link" style="display:none;"><a href="#" onclick="showAdminPanel()">Admin Paneli</a></li>
             </ul>
-            <button class="tweet-btn">Gönder</button>
+            <button class="tweet-btn" id="tweet-btn" disabled>Gönder</button>
         </aside>
-        <main class="feed">
+        <main class="feed" id="feed">
             <div class="tweet-box">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar" alt="Profil">
-                <textarea placeholder="Neler oluyor?" rows="2"></textarea>
-                <button class="tweet-btn">Paylaş</button>
+                <textarea placeholder="Neler oluyor?" rows="2" id="tweet-textarea" disabled></textarea>
+                <button class="tweet-btn" id="share-btn" disabled>Paylaş</button>
             </div>
             <div class="tweet">
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar" alt="Profil">
@@ -57,7 +61,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ...daha fazla tweet... -->
         </main>
         <aside class="widgets">
             <div class="user-card">
@@ -76,6 +79,35 @@
                 </ul>
             </div>
         </aside>
+    </div>
+
+    <!-- Kayıt/Giriş Modalı -->
+    <div id="auth-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Kayıt Ol / Giriş Yap</h2>
+            <input type="text" id="auth-username" placeholder="Kullanıcı Adı">
+            <input type="password" id="auth-password" placeholder="Şifre">
+            <button id="register-btn">Kayıt Ol</button>
+            <button id="signin-btn">Giriş Yap</button>
+            <div id="auth-error" style="color:red;margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="admin-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-admin-modal">&times;</span>
+            <h2>Admin Paneli</h2>
+            <div>
+                <h3>Kullanıcılar</h3>
+                <ul id="user-list"></ul>
+            </div>
+            <div>
+                <h3>Forum Gönderileri</h3>
+                <ul id="post-list"></ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
